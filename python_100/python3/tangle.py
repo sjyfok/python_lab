@@ -2,24 +2,22 @@
 #一定要放在首行
 
 '''
-百分制等级
-90-100  : A
-80-89   : B
-70-79   : C
-60-69   : D
-0-59    : E
+输入三角形的三条边
+如果能构成三角形 输入其面积周长
+否则提示不能构成3角形
 '''
 
-score = float(input('请输入程序: '))
-if score >= 90:
-    grade = 'A'
-elif score >= 80:
-    grade = 'B'
-elif score >= 70:
-    grade = 'C'
-elif score >= 60:
-    grade = 'D'
-else:
-    grade = 'E'
+import math
+a = float(input('a ='))
+b = float(input('b ='))
+c = float(input('c ='))
 
-print('对应的等级是:', grade)
+if a+b > c and a+c > b and b+c > a :
+    print('周长: %f' %(a+b+c))
+    p = (a+b+c)/2
+    area = math.sqrt(p*(p-a)*(p-b)*(p-c))
+    print('面积:%f' %(area))
+else:
+    print('不能构成三角形')
+
+
